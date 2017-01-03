@@ -1,7 +1,6 @@
-
 import numpy as np
 import geopy
-from map import Map
+from greengraph_module.map_file import Map
 
 
 class Greengraph(object):

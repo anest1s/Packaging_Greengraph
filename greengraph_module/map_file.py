@@ -1,4 +1,3 @@
-
 import numpy as np
 from io import BytesIO
 from matplotlib import image as img
@@ -8,7 +7,7 @@ import requests
 class Map(object):
 
     def __init__(self, lat, long, satellite=True, zoom=10,
-                 size=(400,400), sensor=False):
+                 size=(400, 400), sensor=False):
         base = "http://maps.googleapis.com/maps/api/staticmap?"
 
         params = dict(
