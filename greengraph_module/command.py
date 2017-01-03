@@ -3,6 +3,12 @@ import matplotlib.pyplot as plt
 from greengraph_module import Greengraph
 
 def process():
+
+   '''
+   This function parses the start point, end point and integer number of steps,
+   provided by the user.
+   '''
+
    parser = ArgumentParser(description="Generate a graph that shows \
                     the amount of green pixels between two locations. ")
    parser.add_argument('--fr0m', '-f', required=True)
