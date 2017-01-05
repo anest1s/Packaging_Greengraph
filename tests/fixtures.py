@@ -1,12 +1,14 @@
 from greengraph_module import Greengraph
+from itertools import chain
 import yaml
 import os
+import numpy as np
 
 
 graph = Greengraph('Athens', 'Lamia')
-
 places = ['Athens', 'Lamia']
-steps = [2, 4]
+steps = [2, 10]
+
 
 # geolocate fixtures
 fixtures = {}
@@ -20,6 +22,15 @@ with open(os.path.join(os.path.dirname(__file__), 'fixtures.yaml'), 'w') as fixt
 # location_sequence fixtures
 fixtures = {}
 with open(os.path.join(os.path.dirname(__file__), 'fixtures.yaml'), 'a') as fixtures_file:
-    for steps in steps:
-        fixtures[steps] = (graph.location_sequence(graph.geolocate('Athens'), graph.geolocate('Lamia'), steps)).tolist()
+    for step in steps:
+        fixtures[step] = (graph.location_sequence(graph.geolocate('Athens'), graph.geolocate('Lamia'), step)).tolist()
     yaml.dump({'location_sequence': fixtures}, fixtures_file)
+
+
+# green_between fixtures
+fixtures = {}
+with open(os.path.join(os.path.dirname(__file__), 'fixtures.yaml'), 'a') as fixtures_file:
+    for step in steps:
+        number = graph.green_between(step)
+        fixtures[step] = list(chain.from_iterable(np.vstack(number).tolist()))
+    yaml.dump({'green_between': fixtures}, fixtures_file)
