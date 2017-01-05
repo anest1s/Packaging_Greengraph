@@ -11,10 +11,10 @@ def process():
 
    parser = ArgumentParser(description="Generate a graph that shows \
                     the amount of green pixels between two locations. ")
-   parser.add_argument('--fr0m', '-f', required=True)
-   parser.add_argument('--to', '-t', required=True)
-   parser.add_argument('--steps', '-s', required=True)
-   parser.add_argument('--out', '-o', required=True)
+   parser.add_argument('--fr0m', required=True, help="Type the starting place")
+   parser.add_argument('--to', required=True, help="Type the destination")
+   parser.add_argument('--steps', type=int, required=True, help="Number the steps")
+   parser.add_argument('--out', help="Determine the name and format of the output file")
    arguments = parser.parse_args()
 
    mygraph = Greengraph(arguments.fr0m, arguments.to)
