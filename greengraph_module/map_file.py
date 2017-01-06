@@ -1,3 +1,11 @@
+#  ==============================================================================================================
+#  @brief: This script fetches a map of a specific place from google maps given its latitude and longitude
+#          and calculates the green pixels that it contains based on a given threshold value
+#  @details: This work has been done for the MPHYG001 module of my MRes studies
+#  @author: Anestis Mamplekos-Alexiou (anestis.mamplekos-alexiou.16@ucl.ac.uk)
+#  @date: 6/1/2017
+
+
 import numpy as np
 from io import BytesIO
 from matplotlib import image as img

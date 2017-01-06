@@ -1,3 +1,11 @@
+#  ==============================================================================================================
+#  @brief: This script fetches a sequence of maps of places from google maps given the latitude and the longitude
+#        of each and counts the green pixels for each one of them
+#  @details: This work has been done for the MPHYG001 module of my MRes studies
+#  @author: Anestis Mamplekos-Alexiou (anestis.mamplekos-alexiou.16@ucl.ac.uk)
+#  @date: 6/1/2017
+
+
 import numpy as np
 import geopy
 from greengraph_module.map_file import Map
